@@ -6,25 +6,31 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-
+import { DetalleLicorPage } from '../pages/detalle-licor/detalle-licor';
+import { LicorProvider } from '../providers/licor/licor';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    DetalleLicorPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    DetalleLicorPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LicorProvider
   ]
 })
 export class AppModule {}

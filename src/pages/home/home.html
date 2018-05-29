@@ -7,8 +7,10 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+        <ion-item-group *ngFor="let tipo of tipos_licor">
+          <ion-item-divider color="light" >{{tipo.nombre}}</ion-item-divider>
+          <div *ngFor="let licor of licores" >
+          <ion-item (click)="verLicor(licor.id)" *ngIf="licor.fk_tipolicor == tipo.id" >{{ licor.nombre }}</ion-item>
+        </div>
+        </ion-item-group>
 </ion-content>

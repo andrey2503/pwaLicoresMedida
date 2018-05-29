@@ -2,5 +2,12 @@
   "name": "alcoholApp",
   "app_id": "",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {},
+  "proxies":[
+    {
+    "path": "/API/",
+    "proxyUrl": "http://localhost"
+    }
+  ]
+  
 }
