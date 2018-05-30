@@ -7,13 +7,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DetalleLicorPage } from '../pages/detalle-licor/detalle-licor';
+import { AgregarNuevoLicorPage } from '../pages/agregar-nuevo-licor/agregar-nuevo-licor';
 import { LicorProvider } from '../providers/licor/licor';
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    DetalleLicorPage
+    DetalleLicorPage,
+    AgregarNuevoLicorPage
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
   entryComponents: [
     MyApp,
     HomePage,
-    DetalleLicorPage
+    DetalleLicorPage,
+    AgregarNuevoLicorPage
   ],
   providers: [
     StatusBar,

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LicorProvider } from '../../providers/licor/licor';
 import { DetalleLicorPage } from '../detalle-licor/detalle-licor';
+import { AgregarNuevoLicorPage } from '../agregar-nuevo-licor/agregar-nuevo-licor';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
@@ -38,5 +39,9 @@ export class HomePage {
   verLicor(id){
     this.navCtrl.push(DetalleLicorPage,{'id':id});
   }// fin de combinar
+
+  nuevoLicor(){
+    this.navCtrl.push(AgregarNuevoLicorPage,{'tipos_licor':this.tipos_licor});
+  }
 
 }
