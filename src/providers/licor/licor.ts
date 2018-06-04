@@ -34,8 +34,17 @@ export class LicorProvider {
     return this.http.get(this.ruta+'alcoholmedida/public/api/licor/'+id);
   }// fin de getDetalleLicor
 
-  postAgregarLicor(fk_tipolicor,nombre){
-    return this.http.post(this.ruta+'alcoholmedida/public/api/agregarLicor/',{'fk_tipolicor':fk_tipolicor,'nombre':nombre}, httpOptions)
+  postAgregarLicor(tipo_licor,estado_licor,tipo__envace_licor,nombre,peso_total,pero_util){
+    return this.http.post(this.ruta+'alcoholmedida/public/api/agregarLicor',
+    {
+      'tipo_licor':tipo_licor,
+      'estado_licor':estado_licor,
+      'tipo__envace_licor':tipo__envace_licor,
+      'nombre':nombre,
+      'peso_total':peso_total,
+      'pero_util':pero_util
+    
+    }, httpOptions)
     .pipe();
   }
 

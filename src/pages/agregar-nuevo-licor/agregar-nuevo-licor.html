@@ -20,13 +20,29 @@
           <ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-6>
 
     <ion-list>
-      <h4>Tipo de licor</h4>
         <ion-item>
-          <ion-label>Tipo</ion-label>
+          <ion-label>Tipo de licor</ion-label>
           <ion-select [(ngModel)]="tipo_licor">
             <ion-option *ngFor="let tipo of tipos_licor" value="{{ tipo.id }}">{{ tipo.nombre }}</ion-option>
           </ion-select>
         </ion-item>
+
+        <ion-item>
+          <ion-label>Estado</ion-label>
+          <ion-select [(ngModel)]="estado_licor">
+            <ion-option  value="1">Abierta</ion-option>
+            <ion-option  value="2">Cerrada</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Envase</ion-label>
+          <ion-select [(ngModel)]="tipo__envace_licor" (ngModelChange)="cantidadShots()">
+            <ion-option  value="1">Litro</ion-option>
+            <ion-option  value="2">Botella</ion-option>
+          </ion-select>
+        </ion-item>
+
       </ion-list>
 
       <ion-list>
@@ -35,6 +51,25 @@
             <ion-label floating>Nombre</ion-label>
             <ion-input type="text" [(ngModel)]="nombre"></ion-input>
           </ion-item>
+
+          <ion-item>
+            <ion-label floating>Peso total</ion-label>
+            <ion-input type="text" [(ngModel)]="peso_total"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Peso util</ion-label>
+            <ion-input type="text" [(ngModel)]="pero_util"  (ngModelChange)="cantidadShots()"></ion-input>
+          </ion-item>
+          <br>
+          <br>
+          <br>          
+          <ion-item>
+            <ion-label floating>Cantidad de tragos</ion-label>
+            <ion-input type="text" [(ngModel)]="shots" disabled></ion-input>
+          </ion-item>
+          <br>
+          <br>          
         </ion-list>
         <button ion-button color="secondary" (click)="agregarLicor()">Agregar Licor</button>
 
