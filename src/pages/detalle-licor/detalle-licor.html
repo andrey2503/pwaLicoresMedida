@@ -14,5 +14,22 @@
 
 
 <ion-content padding>
+<!-- inicio de content -->
 
+<ion-grid>
+  <ion-row>
+    <ion-col col-3>Tragos</ion-col>
+    <ion-col col-3>Peso actual</ion-col>
+    <ion-col col-3>Peso util</ion-col>
+    <ion-col col-3>Estado</ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-3 >{{ detalles.cantidad_tragos }}</ion-col>
+    <ion-col col-3 >{{ detalles.peso_actual }}</ion-col>
+    <ion-col col-3 >{{ detalles.peso_util }}</ion-col>
+    <ion-col col-3 >{{ detalles.abierta }}</ion-col>
+  </ion-row>
+</ion-grid>
+
+  <!-- fin del content -->
 </ion-content>

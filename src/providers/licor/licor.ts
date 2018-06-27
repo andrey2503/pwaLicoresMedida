@@ -31,7 +31,7 @@ export class LicorProvider {
   }// fin de getListaLicores
 
   getDatalleLicor(id){
-    return this.http.get(this.ruta+'alcoholmedida/public/api/licor/'+id);
+    return this.http.get(this.ruta+'alcoholmedida/public/api/licor_detalle/'+id);
   }// fin de getDetalleLicor
 
   postAgregarLicor(tipo_licor,estado_licor,tipo__envace_licor,nombre,peso_total,pero_util){

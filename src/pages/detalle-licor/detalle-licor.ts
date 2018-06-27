@@ -28,7 +28,8 @@ export class DetalleLicorPage {
 
   getDetalleLicor(id){
     this.dataLicor.getDatalleLicor(id).subscribe(data=>{
-
+    console.log(data[0]);
+    this.detalles=data[0];
     });
   }//fin de GetdetalleLicor
 

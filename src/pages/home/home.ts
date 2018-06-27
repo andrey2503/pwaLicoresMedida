@@ -18,7 +18,7 @@ export class HomePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapaPage');
-    this.getLicores();
+    //this.getLicores();
   }//ionViewDidLoa
 
   getTiposLicor(){
@@ -43,5 +43,10 @@ export class HomePage {
   nuevoLicor(){
     this.navCtrl.push(AgregarNuevoLicorPage,{'tipos_licor':this.tipos_licor});
   }
+
+  ionViewWillEnter() {
+    console.log("llamada en home");
+    this.getLicores();
+}
 
 }
