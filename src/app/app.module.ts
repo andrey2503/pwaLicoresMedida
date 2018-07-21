@@ -10,6 +10,7 @@ import { DetalleLicorPage } from '../pages/detalle-licor/detalle-licor';
 import { AgregarNuevoLicorPage } from '../pages/agregar-nuevo-licor/agregar-nuevo-licor';
 import { LicorProvider } from '../providers/licor/licor';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 @NgModule({
   declarations: [
     MyApp,
@@ -33,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LicorProvider
+    LicorProvider,
+    AuthServiceProvider
   ]
 })
 export class AppModule {}

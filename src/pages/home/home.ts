@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import { LicorProvider } from '../../providers/licor/licor';
 import { DetalleLicorPage } from '../detalle-licor/detalle-licor';
 import { AgregarNuevoLicorPage } from '../agregar-nuevo-licor/agregar-nuevo-licor';
+import { Cookie } from 'ng2-cookies/ng2-cookies';
+import { LoginPage } from '../login/login';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
@@ -20,6 +22,13 @@ export class HomePage {
     console.log('ionViewDidLoad MapaPage');
     //this.getLicores();
   }//ionViewDidLoa
+
+  logOut(){
+    Cookie.set('alcohol_email',null);
+    Cookie.set('alcohol_idrol',null);
+    //this.navCtrl.setRoot(LoginPage);
+    //alert(Cookie.get('alcohol_email'));
+  }
 
   getTiposLicor(){
     this.dataLicor.getListaTipoLicores().subscribe(data=>{
