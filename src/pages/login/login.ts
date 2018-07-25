@@ -9,7 +9,7 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
  */
 import { Cookie } from 'ng2-cookies/ng2-cookies';
 import { HomePage } from '../home/home';
-
+import { HomeEmpleadoPage } from '../home-empleado/home-empleado';
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -24,22 +24,29 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
-    alert(Cookie.get('alcohol_email'));
+    // alert(Cookie.get('alcohol_email'));
     if(Cookie.get('alcohol_email')!='null'){
-      alert("home page");
+      if(Cookie.get('alcohol_idrol') === '1' ){
       this.navCtrl.setRoot(HomePage); 
+      }else if (Cookie.get('alcohol_idrol') === '2') {
+      this.navCtrl.setRoot(HomeEmpleadoPage); 
+      }
     }else{
       
     }
   }
 
   public login() {
-    alert();
-    
     this.showLoading()
     this.auth.login(this.registerCredentials).subscribe(allowed => {
-      if (allowed) {        
-        this.navCtrl.setRoot(HomePage); 
+      // alert(allowed.acceso);
+      // console.log(allowed);
+      if (allowed.acceso) {
+        if(allowed.idrol==1){
+          this.navCtrl.setRoot(HomePage); 
+        } else if(allowed.idrol==2){
+          this.navCtrl.setRoot(HomeEmpleadoPage); 
+        }
             // Cookie.set('cookieName', 'cookieValue')
             // let myCookie = Cookie.get('cookieName');
       } else {
@@ -59,15 +66,15 @@ export class LoginPage {
     this.loading.present();
   }
  
-  // showError(text) {
-  //   this.loading.dismiss();
+  showError(text) {
+    this.loading.dismiss();
  
-  //   let alert = this.alertCtrl.create({
-  //     title: 'Fail',
-  //     subTitle: text,
-  //     buttons: ['OK']
-  //   });
-  //   alert.present(prompt);
-  // }
+    let alert = this.alertCtrl.create({
+      title: 'Fail',
+      subTitle: text,
+      buttons: ['OK']
+    });
+    alert.present();
+  }
 
 }

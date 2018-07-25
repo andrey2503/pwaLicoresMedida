@@ -21,12 +21,15 @@ export class HomePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapaPage');
     //this.getLicores();
+    // if(Cookie.get('alcohol_email')){
+
+    // }
   }//ionViewDidLoa
 
   logOut(){
     Cookie.set('alcohol_email',null);
     Cookie.set('alcohol_idrol',null);
-    //this.navCtrl.setRoot(LoginPage);
+    this.navCtrl.setRoot(LoginPage);
     //alert(Cookie.get('alcohol_email'));
   }
 

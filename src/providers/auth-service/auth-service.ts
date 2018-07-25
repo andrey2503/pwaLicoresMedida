@@ -50,6 +50,9 @@ export class AuthServiceProvider {
             this.currentUser = new User(data.email,data.idrol);
             observer.next(access);
             observer.complete();
+          }else{
+            observer.next(data);
+            observer.complete();
           }
         });
        

@@ -11,12 +11,14 @@ import { AgregarNuevoLicorPage } from '../pages/agregar-nuevo-licor/agregar-nuev
 import { LicorProvider } from '../providers/licor/licor';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { HomeEmpleadoPage } from '../pages/home-empleado/home-empleado';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     DetalleLicorPage,
-    AgregarNuevoLicorPage
+    AgregarNuevoLicorPage,
+    HomeEmpleadoPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     MyApp,
     HomePage,
     DetalleLicorPage,
-    AgregarNuevoLicorPage
+    AgregarNuevoLicorPage,
+    HomeEmpleadoPage
   ],
   providers: [
     StatusBar,
