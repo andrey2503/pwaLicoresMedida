@@ -6,15 +6,6 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <button ion-item (click)="openPage(homePage)">
-        Home
-      </button>
-      <button ion-item (click)="paginaPost()">
-        Post
-      </button>
-      <button ion-item (click)="openPage(eventsPage)">
-        Events
-      </button>
       <button ion-item (click)="logOut()">
         Cerrar session
       </button>
@@ -39,7 +30,7 @@
     <ion-fab top right edge>
         <button ion-fab mini><ion-icon name="add"></ion-icon></button>
         <ion-fab-list>
-          <button ion-fab><ion-icon name="ios-keypad-outline"></ion-icon></button>
+          <button (click)="nuevoTipo()" ion-fab><ion-icon name="ios-keypad-outline"></ion-icon></button>
           <button (click)="nuevoLicor()" ion-fab><ion-icon name="ios-beer-outline"></ion-icon></button>
         </ion-fab-list>
       </ion-fab>

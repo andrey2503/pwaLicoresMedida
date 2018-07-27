@@ -46,6 +46,14 @@ export class LicorProvider {
     
     }, httpOptions)
     .pipe();
-  }
+  }//postAgregarLicor
+
+  postAgregarTipoLicor(tipo_licor_nombre){
+    return this.http.post(this.ruta+'alcoholmedida/public/api/agregarTipoLicor',
+    {
+      'tipo_licor_nombre':tipo_licor_nombre
+    }, httpOptions)
+    .pipe();
+  }//postAgregarTipoLicor
 
 }

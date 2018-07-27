@@ -44,13 +44,6 @@ export class AgregarNuevoLicorPage {
     }
   }// fin de cantidad shots
   agregarLicor(){
-    // alert(this.tipo_licor);
-    // alert(this.estado_licor);
-    // alert(this.tipo__envace_licor);
-    // alert(this.nombre);
-    // alert(this.peso_total);
-    // alert(this.pero_util);
-   
     
       let toast = this.toastCtrl.create({
         message: 'Licor agregado exitosamente',
